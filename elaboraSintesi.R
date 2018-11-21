@@ -8,7 +8,7 @@ library("readr")
 library("dplyr")
 
 
-#funzioni di utilit√† per la cotruzione dei fogli di sintesi
+#funzioni di utilit‡ per la cotruzione dei fogli di sintesi
 source("funzioniSintesi.R")
 #funzione per creare fogli sintesi
 source("forestSintesi.R")

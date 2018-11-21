@@ -184,11 +184,11 @@ verifica_anni_serie<-function(annoI,annoF,fires,harvests,surfaces){
 ######################################################
 ######################################################
 
-#lista.in contiene i risultati di una determinata regione nei vari anni (ciascun elemento di lista.in Ã¨ un foglio gs o
+#lista.in contiene i risultati di una determinata regione nei vari anni (ciascun elemento di lista.in è¨ un foglio gs o
 #un foglio ci. unisci.lista mette insieme i risultati delle varie regioni. Ad esempio, dopo aver eseguito unisci.lista
-#il primo elemento di lista.out conterrÃ  tutti i risultati del 1985 delle regioni.
+#il primo elemento di lista.out conterrà tutti i risultati del 1985 delle regioni.
 
-#In realtÃ  con unisci.lista mettiamo in uno stesso data.frame solo i risultati che vanno aggregati per calcolare i
+#In realtà con unisci.lista mettiamo in uno stesso data.frame solo i risultati che vanno aggregati per calcolare i
 #risultati per l'italia
 	
 unisci.lista<-function(lista.in=NA,lista.out=NA,nomi.variabili=NA,regione=NA){

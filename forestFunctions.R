@@ -551,7 +551,13 @@ applicaPercentuali<-function(x=NA,percentuali=NA,variabile=NA){
 	if(missing(percentuali)) stop(paste0(match.call()[[1]],": parametro x mancante"))
 	if(missing(variabile)) stop(paste0(match.call()[[1]],": parametro x mancante"))
 
-	merge(x,percentuali,sort=FALSE,by=c("var3","inventory.tipology"))->newx
+####### 21_11 marina############################################################
+####### si blocca qui. probabimente perche' abbiamo bypassato la procedura per 
+####### il calcolo dell'harvests a partire dal 2010 in poi 
+####### lo calcoliamo con i fattori del file harvests_input
+###############################################################################
+  
+  	merge(x,percentuali,sort=FALSE,by=c("var3","inventory.tipology"))->newx
 	stopifnot(nrow(newx)==28)
 
 	#trova colonna che riporta la voce percent
@@ -945,7 +951,9 @@ currentIncrement.per.ha<-function(x=NA,col.w=NA,col.x=NA,drainGrazingp=NA,mortal
   if(missing(mortalityp)) stop(paste0(match.call()[[1]],": parametro mortalityp mancante"))
   if(missing(sub.functionp)) stop(paste0(match.call()[[1]],": parametro sub.functionp mancante"))
 
+
 	merge(x,col.w,sort=FALSE,by=c("var3","inventory.tipology"),all.x=FALSE)->newx
+	
 	stopifnot(nrow(newx)==28)
 	merge(newx,col.x,sort=FALSE,by=c("var3","inventory.tipology"),all.x=TRUE)->newx2
 	stopifnot(nrow(newx2)==28)
