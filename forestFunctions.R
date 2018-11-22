@@ -136,7 +136,7 @@ forest1<-function(x=NA,pools=NA,cc2dm,cd2c,region=TRUE){
 			stop("ERRORE CALCOLO PARAMETRO")
 		}
 
-		if(region) x$total.carbon<-(x$carbon.per.ha*x$surface)
+		if(region) x$total.carbon<-(x$carbon.per.ha*x$surface) # nel caso di soil e litter
 
 	}#fine su pools
 

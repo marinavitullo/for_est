@@ -13,7 +13,7 @@ guido.debug.write<-FALSE
 annoI<<-1985
 annoF<<-2025
 
-annoIntermedio<<-2017
+annoIntermedio<<-2010
 
 regioni<-c("Abruzzo", "Alto_Adige", "Basilicata", "Calabria","Campania", "Emilia_Romagna", "Friuli_Venezia_Giulia", 
 "Lazio", "Liguria", "Lombardia", "Marche", "Molise","Piemonte", "Puglia", "Sardegna", "Sicilia","Toscana", "Trentino","Umbria", "Valle_D_Aosta","Veneto")
