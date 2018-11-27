@@ -184,11 +184,11 @@ verifica_anni_serie<-function(annoI,annoF,fires,harvests,surfaces){
 ######################################################
 ######################################################
 
-#lista.in contiene i risultati di una determinata regione nei vari anni (ciascun elemento di lista.in è¨ un foglio gs o
+#lista.in contiene i risultati di una determinata regione nei vari anni (ciascun elemento di lista.in ?? un foglio gs o
 #un foglio ci. unisci.lista mette insieme i risultati delle varie regioni. Ad esempio, dopo aver eseguito unisci.lista
-#il primo elemento di lista.out conterrà tutti i risultati del 1985 delle regioni.
+#il primo elemento di lista.out conterr? tutti i risultati del 1985 delle regioni.
 
-#In realtà con unisci.lista mettiamo in uno stesso data.frame solo i risultati che vanno aggregati per calcolare i
+#In realt? con unisci.lista mettiamo in uno stesso data.frame solo i risultati che vanno aggregati per calcolare i
 #risultati per l'italia
 	
 unisci.lista<-function(lista.in=NA,lista.out=NA,nomi.variabili=NA,regione=NA){
@@ -439,11 +439,12 @@ elabora<-function(lista.nomi.regioni=NA,
 
 				calcoliFogliGS(index=indice-1,yy=anno)->colgs
 
-			  if(is.null(colgs$colonna.w)){ #dal 2017 in poi ....
+			  if(is.null(colgs$colonna.w)){ #da ANNO INTERMEDIO in poi ....
 
 			    left_join(sub.harvests_input,lista.aboveground.out[[indice-1]],by=c("var3"="var3","inventory.tipology"="inventory.tipology"))->temporaneo
-			    colgs[["colonna.w"]]<-data.frame(var3=temporaneo$var3,inventory.tipology=temporaneo$inventory.tipology,harvest=temporaneo$total.growing.stock*temporaneo$fattori)
-
+			    #27 novembre, sostituisco total.growing.stock con total.carbon al fine delle simulazioni da ANNO INTERMEDIO
+			    #colgs[["colonna.w"]]<-data.frame(var3=temporaneo$var3,inventory.tipology=temporaneo$inventory.tipology,harvest=temporaneo$total.growing.stock*temporaneo$fattori)
+			    colgs[["colonna.w"]]<-data.frame(var3=temporaneo$var3,inventory.tipology=temporaneo$inventory.tipology,harvest=temporaneo$total.carbon*temporaneo$fattori)
 			  }			  
 			  			  
 				currentIncrement.per.ha(x=lista.aboveground.out[[indice-1]],
